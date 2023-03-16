@@ -1,11 +1,12 @@
 import './App.css';
 import { Home } from './components/Home';
-import { ResponsiveAppBar } from './components/ResponsiveAppBar.jsx';
+import { ResponsiveNavBar } from './components/ResponsiveNavBar.jsx';
+import 'animate.css';
 
 function App() {
   return (
     <div className="App">
-      <ResponsiveAppBar></ResponsiveAppBar>
+      <ResponsiveNavBar></ResponsiveNavBar>
       <div style={{margin: 40}}>
         <Home></Home>
       </div>

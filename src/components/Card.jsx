@@ -4,37 +4,57 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import "./../config";
+import {MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn, MDBTypography, MDBContainer, MDBIcon } from 'mdb-react-ui-kit';
 
 export const TaskCard = () => {
 
+    const [isHover, setIsHover] = React.useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHover(true);
+    };
+    const handleMouseLeave = () => {
+        setIsHover(false);
+    };
+
     const styles = {
         card:{
-            borderRadius: "20px",
-            border: "5px",
-            borderColor: "#F59D0B",
-            margin: 20,
+            // borderRadius: "75px",
+            marginTop: "28px",
             title:{
-                color: "#F59D0B"
-            }
+                // borderRadius: "200px",
+                color: "white",
+                backgroundColor: global.colors.secondary
+            },
+            button:{
+                color: global.colors.primary,
+                backgroundColor: global.colors.terciary,
+                position: "absolute",
+                bottom: 0,
+                padding: 10,
+                opacity: 0.9,
+                transition: "5s",
+                display: isHover ? "block" :  "none",
+            },
+
         },
         cardContent:{
-            textAlign: "left"
+            textAlign: "center",
         }
     };
 
     return (
-        <Card style={styles.card}>
-            <CardContent style={styles.cardContent}>
-                <Typography style={styles.card.title} gutterBottom variant="h6" component="div">
-                    <b>Crear plantilla para verificación de mails</b>
-                </Typography>
-                <Typography variant="body2">
-                    Se debe crear un archivo html. Debe ser renderizado desde el endpoint /mailerlist/mailer.
-                </Typography>
-            </CardContent>
-            <CardActions>
-                <Button size="small">Finalizar</Button>
-            </CardActions>
-        </Card>
+        <MDBCard className="animate__animated animate__zoomInDown" style={styles.card} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <MDBCardBody className="p-0">
+                <MDBCardTitle style={styles.card.title} className="p-2 text-center"> Modificar los archivos svg a PNG</MDBCardTitle>
+                <MDBTypography className='p-3' style={{color: "grey"}}>Al momento de enviar mails, las imágenes de extensión .svg no son procesadas.
+                        Deben ser modificadas a extensión .png.
+                </MDBTypography>
+                <MDBContainer style={styles.card.button} className="text-center animate__animated animate__jello">
+                    <MDBTypography tag="h6" color="success">Done <MDBIcon fas icon="check" /></MDBTypography>
+                </MDBContainer>
+            </MDBCardBody>
+        </MDBCard>
     );
 }
