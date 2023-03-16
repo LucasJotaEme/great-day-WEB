@@ -76,5 +76,5 @@ Celeste (texto):
     1B9EE7
 Anaranjado (sol):
     F59D0B
-Violeta ():
-    5D246A
+Cristal ():
+    EFECE4
