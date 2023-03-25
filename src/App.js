@@ -1,12 +1,19 @@
 import './App.css';
-import { Home } from './components/Home';
+import { Home } from './pages/Home';
 import { ResponsiveAppBar } from './components/ResponsiveAppBar.jsx';
+import { SideBar } from './components/SideBar.jsx';
+
+const styles = {
+  container:{
+    margin: "50px 100px"
+  }
+}
 
 function App() {
   return (
     <div className="App">
-      <ResponsiveAppBar></ResponsiveAppBar>
-      <div style={{margin: 40}}>
+      <SideBar></SideBar>
+      <div style={styles.container}>
         <Home></Home>
       </div>
     </div>

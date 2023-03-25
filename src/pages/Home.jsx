@@ -2,7 +2,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import { TaskCard } from './Card';
+import { TaskCard } from '../components/Card';
 
 export const  Home = () => {
 
@@ -16,7 +16,7 @@ export const  Home = () => {
     }));
 
     return(
-        <div style={{marginTop: 50}}>
+        <div>
             <Grid container spacing={3}>
                 {/* ### Temporizador y horas faltantes ### */}
                 <Grid xs={4}>

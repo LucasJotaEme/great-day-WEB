@@ -73,8 +73,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Colores del proyecto:
 
 Celeste (texto): 
-    1B9EE7
+    #1B9EE7
 Anaranjado (sol):
-    F59D0B
+    #F59D0B
 Violeta ():
-    5D246A
+    #EFECE4
